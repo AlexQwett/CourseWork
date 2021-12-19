@@ -1,0 +1,13 @@
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Mapper.dll
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Mapper.pdb
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Domain.dll
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Entities.dll
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Models.dll
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Domain.pdb
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Entities.pdb
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\bin\Debug\Models.pdb
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\obj\Debug\Mapper.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\obj\Debug\Mapper.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\obj\Debug\Mapper.csproj.CopyComplete
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\obj\Debug\Mapper.dll
+C:\Users\admin\source\repos\CourseworkVar13\Mapper\obj\Debug\Mapper.pdb

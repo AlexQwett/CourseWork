@@ -1,0 +1,24 @@
+[
+  {
+    "Qualification": "Травматолог",
+    "Experience": 4,
+    "OfficeNumber": 213,
+    "ID": 0,
+    "Name": "Віталій",
+    "LastName": "Моляка",
+    "Age": 32,
+    "Email": "molyaka_v@ukr.net",
+    "IdentificationCode": "6459782340"
+  },
+  {
+    "Qualification": "Дерматолог",
+    "Experience": 14,
+    "OfficeNumber": 112,
+    "ID": 1,
+    "Name": "Максим",
+    "LastName": "Гончаренко",
+    "Age": 44,
+    "Email": "goncharMak78@gmail.com",
+    "IdentificationCode": "1231231231"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "Disease": "Перелом",
+    "DetectionDate": "12.12.2021",
+    "MedicalBook": [],
+    "ID": 0,
+    "Name": "Валерій",
+    "LastName": "Кравчук",
+    "Age": 21,
+    "Email": "kravchuk_val@ukr.net",
+    "IdentificationCode": "1234567890"
+  },
+  {
+    "Disease": "Акне",
+    "DetectionDate": "15.01.2019",
+    "MedicalBook": [],
+    "ID": 1,
+    "Name": "Оксана",
+    "LastName": "Мариніна",
+    "Age": 23,
+    "Email": "oksmar@ukr.net",
+    "IdentificationCode": "1233213211"
+  },
+  {
+    "Disease": "Перелом лівої ноги",
+    "DetectionDate": "15.12.2021",
+    "MedicalBook": [],
+    "ID": 2,
+    "Name": "Олена",
+    "LastName": "Кривич",
+    "Age": 29,
+    "Email": "kryvycholena@gmail.com",
+    "IdentificationCode": "1234432112"
+  }
+]

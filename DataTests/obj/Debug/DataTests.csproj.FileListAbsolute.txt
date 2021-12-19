@@ -1,0 +1,15 @@
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\DataTests.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\DataTests.pdb
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Data.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Entities.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Data.pdb
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Entities.pdb
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\obj\Debug\DataTests.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\obj\Debug\DataTests.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\obj\Debug\DataTests.csproj.CopyComplete
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\obj\Debug\DataTests.dll
+C:\Users\admin\source\repos\CourseworkVar13\DataTests\obj\Debug\DataTests.pdb

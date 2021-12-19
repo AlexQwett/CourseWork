@@ -1,0 +1,6 @@
+C:\Users\admin\source\repos\CourseworkVar13\Models\bin\Debug\Models.dll
+C:\Users\admin\source\repos\CourseworkVar13\Models\bin\Debug\Models.pdb
+C:\Users\admin\source\repos\CourseworkVar13\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\CourseworkVar13\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\CourseworkVar13\Models\obj\Debug\Models.dll
+C:\Users\admin\source\repos\CourseworkVar13\Models\obj\Debug\Models.pdb
