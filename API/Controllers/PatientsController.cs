@@ -10,26 +10,37 @@ namespace API.Controllers
     {
         private PatientsService patientsService = new PatientsService();
 
-        public void AddOrUpdatePatient(string Name, string LastName, int Age, string Email, string IdentificationCode, string Disease, string DetectionDate)
+        public string AddOrUpdatePatient(string Name, string LastName, int Age, string Email, string IdentificationCode, string Disease, string DetectionDate)
         {
-            PatientModel patient = new PatientModel
+            try
             {
-                Name = Name,
-                LastName = LastName,
-                Age = Age,
-                Email = Email,
-                IdentificationCode = IdentificationCode,
-                Disease = Disease,
-                DetectionDate = DetectionDate
+                PatientModel patient = new PatientModel
+                {
+                    Name = Name,
+                    LastName = LastName,
+                    Age = Age,
+                    Email = Email,
+                    IdentificationCode = IdentificationCode,
+                    Disease = Disease,
+                    DetectionDate = DetectionDate
                 
-            };
+                };
 
-            patientsService.AddOrUpdatePatient(patient.ToDomain());
+                patientsService.AddOrUpdatePatient(patient.ToDomain());
+                return "Дані оновлено\n";
+            }
+            catch (Exception)
+            {
+                return "Щось пішло не так, перевірте корректність вводу даних\n";
+            }            
         }
 
-        public bool DeletePatient(string id)
+        public string DeletePatient(string id)
         {
-            return patientsService.DeletePatient(id);
+            if(patientsService.DeletePatient(id))
+                return "Дані пацієнта успішно видалено";
+            else
+                return "Пацієнта не знайдено";
         }
 
         public PatientModel GetPatient(string id)
@@ -64,11 +75,11 @@ namespace API.Controllers
             if (medicalBook == null || medicalBook.Count == 0)
                 return res;
 
-            for(int i = 0; i < medicalBook.Count; i++)
+            for(int i = 0, k = 1; i < medicalBook.Count; i++, k++)
             {
                 res += "\n-----------------------\n\n" +
-                       $"Запис №{i}" +
-                       $"Хвороба:{medicalBook[i].Disease} \t Дата виявленя хвороби: {medicalBook[i].DetactionDate} \t Дата вилікування: {medicalBook[i].RecoveryDate}";
+                       $"Запис №{k}\n" +
+                       $"Хвороба:{medicalBook[i].Disease} \t Дата виявленя хвороби: {medicalBook[i].DetactionDate} \t Дата вилікування: {medicalBook[i].RecoveryDate}\n";
             }
 
             return res;
@@ -129,6 +140,28 @@ namespace API.Controllers
             {
                 return false;
             }                   
+        }
+
+        public string GetPatientsInfo()
+        {
+            List<PatientModel> patientModels = GetPatients();
+
+            string res = "";
+
+            if (patientModels.Count == 0)
+            {
+                return "База даних пуста";
+            }
+
+            foreach (var patient in patientModels)
+            {
+                res += GetPatientInfo(patient.IdentificationCode);
+
+                if (patientModels.Count != 1)
+                    res += "-------------------------\n\n";
+            }
+
+            return res;
         }
     }
 }

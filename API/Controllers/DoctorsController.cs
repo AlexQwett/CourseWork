@@ -10,26 +10,38 @@ namespace API.Controllers
     {
         private DoctorsService doctorsService = new DoctorsService();
 
-        public void AddOrUpdateDoctor(string Name, string LastName, int Age, string Email, string IdentificationCode, string Qualification, int Experience, int OfficeNumber)
+        public string AddOrUpdateDoctor(string Name, string LastName, int Age, string Email, string IdentificationCode, string Qualification, int Experience, int OfficeNumber)
         {
-            DoctorModel doctor = new DoctorModel
+            try
             {
-                Name = Name,
-                LastName = LastName,
-                Age = Age,
-                Email = Email,
-                IdentificationCode = IdentificationCode,
-                Qualification = Qualification,
-                Experience = Experience,
-                OfficeNumber = OfficeNumber
-            };
+                DoctorModel doctor = new DoctorModel
+                {
+                    Name = Name,
+                    LastName = LastName,
+                    Age = Age,
+                    Email = Email,
+                    IdentificationCode = IdentificationCode,
+                    Qualification = Qualification,
+                    Experience = Experience,
+                    OfficeNumber = OfficeNumber
+                };
 
-            doctorsService.AddOrUpdateDoctor(doctor.ToDomain());
+                doctorsService.AddOrUpdateDoctor(doctor.ToDomain());
+
+                return "Дані оновлено\n";
+            }
+            catch (Exception)
+            {
+                return "Щось пішло не так, перевірте корректність вводу даних\n";
+            }
         }
 
-        public bool DeleteDoctor(string id)
+        public string DeleteDoctor(string id)
         {
-            return doctorsService.DeleteDoctor(id);
+            if (doctorsService.DeleteDoctor(id))
+                return "Дані лікаря успішно видалено";
+            else
+                return "Лікаря не знайдено";
         }
 
         public DoctorModel GetDoctor(string id)
@@ -69,6 +81,28 @@ namespace API.Controllers
                    $"Кваліфікація лікаря: {doctor.Qualification}\n" +
                    $"Стаж роботи: {doctor.Experience}\n" +
                    $"Номер кабінету: {doctor.OfficeNumber}\n";
+        }
+
+        public string GetDoctorsInfo()
+        {
+            List<DoctorModel> doctorModels = GetDoctorsList();
+
+            string res = "";
+
+            if (doctorModels.Count == 0)
+            {
+                return "База даних пуста";
+            }
+
+            foreach (var doctor in doctorModels)
+            {
+                res += GetDoctorInfo(doctor.IdentificationCode);
+
+                if (doctorModels.Count != 1)
+                    res += "-------------------------\n\n";
+            }
+
+            return res;
         }
 
         public List<DoctorModel> GetDoctorsList()

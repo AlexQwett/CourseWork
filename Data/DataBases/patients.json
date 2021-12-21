@@ -2,7 +2,13 @@
   {
     "Disease": "Перелом",
     "DetectionDate": "12.12.2021",
-    "MedicalBook": [],
+    "MedicalBook": [
+      {
+        "Disease": "Перелом",
+        "DetactionDate": "12.12.2021",
+        "RecoveryDate": "29.12.2021"
+      }
+    ],
     "ID": 0,
     "Name": "Валерій",
     "LastName": "Кравчук",

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using API.Controllers;
-using Models;
 
 namespace CourseworkVar13
 {
@@ -47,10 +46,10 @@ namespace CourseworkVar13
                         if (action == "1" || UppercaseFirstLetter(action) == "Додати або обновити дані лікаря" || UppercaseFirstLetter(action) == "Додати" || UppercaseFirstLetter(action) == "Обновити")
                         {
                             Console.Clear();
-                            doctorsController.AddOrUpdateDoctor(GetString("Ім'я: "), GetString("Прізвище: "), GetInt("Вік: ", 18, 115), GetEmail(), GetIdentificationCode(), GetString("Кваліфікація: ", true),
-                                                               GetInt("Стаж(років): ", 1), GetInt("Кабінет №: "));
+                            Console.WriteLine(doctorsController.AddOrUpdateDoctor(GetString("Ім'я: "), GetString("Прізвище: "), GetInt("Вік: ", 18, 115), GetEmail(), GetIdentificationCode(), GetString("Кваліфікація: ", true),
+                                                               GetInt("Стаж(років): ", 1), GetInt("Кабінет №: ")));
 
-                            Console.WriteLine("Дані лікаря успішно додано, щоб продовжити натисніть \"Enter\"");
+                            Console.WriteLine("Щоб продовжити натисніть \"Enter\"");
                             Console.ReadLine();
                             Console.Clear();
                         }
@@ -59,10 +58,9 @@ namespace CourseworkVar13
                             Console.Clear();
                             string id = GetIdentificationCode("Ідентифікаційний код: ", false);
 
-                            if (doctorsController.DeleteDoctor(id))
-                                Console.WriteLine("Дані лікаря успішно видалено, щоб продовжити натисніть \"Enter\"");
-                            else
-                                Console.WriteLine("Лякар за даним індентифікаційним номером не існує, щоб продовжити натисніть \"Enter\"");
+                            Console.WriteLine(doctorsController.DeleteDoctor(id));
+
+                            Console.WriteLine("Щоб продовжити натисніть \"Enter\"");
 
                             Console.ReadLine();
                             Console.Clear();
@@ -85,25 +83,7 @@ namespace CourseworkVar13
                             Console.Clear();
                             Console.WriteLine("Список лікарів та їх спеціалізації: ");
 
-                            List<DoctorModel> doctorModels = doctorsController.GetDoctorsList();
-
-                            if (doctorModels.Count == 0)
-                            {
-                                Console.Clear();
-                                Console.WriteLine("База даних пуста");
-                                Console.WriteLine("\nЩоб продовжити натисніть \"Enter\"");
-
-                                Console.ReadLine();
-                                break;
-                            }
-
-                            foreach (var doctor in doctorModels)
-                            {
-                                Console.WriteLine(doctorsController.GetDoctorInfo(doctor.IdentificationCode));
-                                
-                                if(doctorModels.Count != 1)
-                                    Console.Write("-------------------------\n\n");
-                            }
+                            Console.WriteLine(doctorsController.GetDoctorsInfo());
 
                             Console.WriteLine("\nЩоб продовжити натисніть \"Enter\"");
 
@@ -139,10 +119,10 @@ namespace CourseworkVar13
                         if (action == "1" || UppercaseFirstLetter(action) == "Додати або обновити дані пацієнта" || UppercaseFirstLetter(action) == "Додати" || UppercaseFirstLetter(action) == "Обновити")
                         {
                             Console.Clear();
-                            patientsController.AddOrUpdatePatient(GetString("Ім'я: "), GetString("Прізвище: "), GetInt("Вік: ", 18, 115), GetEmail(), GetIdentificationCode(), GetString("Передбачувана хвороба: ", true),
-                                                               GetDate("Орієнтовна дата захворювання: "));
+                            Console.WriteLine(patientsController.AddOrUpdatePatient(GetString("Ім'я: "), GetString("Прізвище: "), GetInt("Вік: ", 18, 115), GetEmail(), GetIdentificationCode(), GetString("Передбачувана хвороба: ", true),
+                                                               GetDate("Орієнтовна дата захворювання: ")));
 
-                            Console.WriteLine("Дані пацієнта успішно додано, щоб продовжити натисніть \"Enter\"");
+                            Console.WriteLine("Щоб продовжити натисніть \"Enter\"");
                             Console.ReadLine();
                             Console.Clear();
                         }
@@ -151,10 +131,9 @@ namespace CourseworkVar13
                             Console.Clear();
                             string id = GetIdentificationCode("Ідентифікаційний код: ", false);
 
-                            if (patientsController.DeletePatient(id))
-                                Console.WriteLine("Дані пацієнта успішно видалено, щоб продовжити натисніть \"Enter\"");
-                            else
-                                Console.WriteLine("Пацієнт за даним індентифікаційним номером не існує, щоб продовжити натисніть \"Enter\"");
+                            Console.WriteLine(patientsController.DeletePatient(id));
+
+                            Console.WriteLine("Щоб продовжити натисніть \"Enter\"");
 
                             Console.ReadLine();
                             Console.Clear();
@@ -206,25 +185,9 @@ namespace CourseworkVar13
                         else if (action == "4" || UppercaseFirstLetter(action) == "Переглянути список всіх пацієнтів" || UppercaseFirstLetter(action) == "Переглянути список")
                         {
                             Console.Clear();
-                            Console.WriteLine("Список пацієнтів та їх спеціалізації: ");
+                            Console.WriteLine("Список пацієнтів: ");
 
-                            List<PatientModel> patientModels = patientsController.GetPatients();
-
-                            if (patientModels.Count == 0)
-                            {
-                                Console.Clear();
-                                Console.WriteLine("База даних пуста");
-                                Console.WriteLine("\nЩоб продовжити натисніть \"Enter\"");
-
-                                Console.ReadLine();
-                                break;
-                            }
-
-                            foreach (var patient in patientModels)
-                            {
-                                Console.WriteLine(patientsController.GetPatientInfo(patient.IdentificationCode));
-                                Console.Write("-------------------------\n\n");
-                            }
+                            Console.WriteLine(patientsController.GetPatientsInfo());
 
                             Console.WriteLine("\nЩоб продовжити натисніть \"Enter\"");
 
