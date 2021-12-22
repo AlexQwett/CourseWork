@@ -49,7 +49,7 @@ namespace API.Controllers
         {
             List<ScheduleModel> schedule = scheduleServices.GetNotes(DateTime.Parse(date)).ToModelList();
 
-            List<ScheduleModel> dateSchedule = schedule.FindAll(note => note.AdmissionDate == DateTime.Parse(date) && note.Doctor.IdentificationCode == id);
+            List<ScheduleModel> dateSchedule = schedule.FindAll(note => note.AdmissionDate == DateTime.Parse(date) || note.Doctor.IdentificationCode == id);
 
             if (dateSchedule == null)
             {

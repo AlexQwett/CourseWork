@@ -100,8 +100,8 @@ namespace API.Controllers
             foreach (var note in notes)
             {   
                 res += $"Дата і час: {note.AdmissionDate:dd.MM.yyyy} {note.Time} \n\n" +
-                           $"Пацієнт: {patientsController.GetPatientInfo(note.Patient.IdentificationCode)}\n" +
-                           $"Лікар: {doctorController.GetDoctorInfo(note.Doctor.IdentificationCode)}";
+                           $"Пацієнт: \n{patientsController.GetPatientInfo(note.Patient.IdentificationCode)}\n" +
+                           $"Лікар: \n{doctorController.GetDoctorInfo(note.Doctor.IdentificationCode)}";
                 
                 if (notes.Count > 1)
                 {
@@ -122,8 +122,8 @@ namespace API.Controllers
             }
 
             return $"Дата і час: {note.AdmissionDate:MM.dd.yyyy} {note.Time} \n\n" +
-                           $"Пацієнт: {patientsController.GetPatientInfo(note.Patient.IdentificationCode)}\n" +
-                           $"Лікар: {doctorController.GetDoctorInfo(note.Doctor.IdentificationCode)}";
+                           $"Пацієнт: \n{patientsController.GetPatientInfo(note.Patient.IdentificationCode)}\n" +
+                           $"Лікар: \n{doctorController.GetDoctorInfo(note.Doctor.IdentificationCode)}";
         }
 
         public string GetNoteDoctorInfo(string date, string time, string patientID, string doctorQualification)
@@ -136,7 +136,7 @@ namespace API.Controllers
             }
 
             return $"Дата і час: {note.AdmissionDate:MM.dd.yyyy} {note.Time} \n\n" +
-                           $"Пацієнт: {patientsController.GetPatientInfo(note.Patient.IdentificationCode)}\n";
+                           $"Пацієнт: \n{patientsController.GetPatientInfo(note.Patient.IdentificationCode)}\n";
         }
 
         private ScheduleModel GetNote(string date, string time, string patientID, string doctorQualification)

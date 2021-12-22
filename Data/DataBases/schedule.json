@@ -79,5 +79,32 @@
       "Email": "molyaka_v@ukr.net",
       "IdentificationCode": "6459782340"
     }
+  },
+  {
+    "ID": 3,
+    "AdmissionDate": "2021-12-23T00:00:00",
+    "Time": "15:00",
+    "Patient": {
+      "Disease": "Акне",
+      "DetectionDate": "15.01.2019",
+      "MedicalBook": [],
+      "ID": 0,
+      "Name": "Оксана",
+      "LastName": "Мариніна",
+      "Age": 23,
+      "Email": "oksmar@ukr.net",
+      "IdentificationCode": "1233213211"
+    },
+    "Doctor": {
+      "Qualification": "Дерматолог",
+      "Experience": 14,
+      "OfficeNumber": 145,
+      "ID": 0,
+      "Name": "Оксана",
+      "LastName": "Марчук",
+      "Age": 45,
+      "Email": "marchuck@gmail.com",
+      "IdentificationCode": "1231231231"
+    }
   }
 ]
